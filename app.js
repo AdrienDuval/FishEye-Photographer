@@ -1,15 +1,29 @@
+
 const modal = document.querySelector(".modal");
 const previews = document.querySelectorAll(".single-image img");
 const original = document.querySelector(".full-img");
 const caption = document.querySelector(".caption");
-const closeBtn = document.getElementById("close-btn");
-const navBtn = document.getElementById("nav-btn");
-const nextBtn = document.getElementById("next-btn");
-const prevBtn = document.getElementById("prev-btn");
-const modalForm = document.getElementById("modal-form");
-const contactBtn =document.getElementById("contact-btn");
-const closeBtnForm = document.getElementById("close-btn-form")
-const form = document.getElementById("form");
+const errorMsg = document.querySelectorAll(".error-msg");
+
+let isFormValide =  false;
+// declaring a variable for the id to avoid to much code repetion
+
+let id = (id) => document.getElementById(id);
+
+let closeBtn = id("close-btn"),
+     navBtn = id("nav-btn"),
+     nextBtn = id("next-btn"),
+     prevBtn = id("prev-btn"),
+     modalForm = id("modal-form"),
+     contactBtn =id("contact-btn"),
+     closeBtnForm = id("close-btn-form"),
+     form = id("form"),
+     firstName = id("first-name"),
+     lastName = id("last-name"),
+     email = id("email"),
+     receptioMsg = id("reception-msg");
+
+   
 // looping throw the images to get all the images together and add click event listener
 
 previews.forEach((preview) => {
@@ -61,9 +75,58 @@ closeBtn.addEventListener("click", closeBtns);
 contactBtn.addEventListener("click", openModalForm);
 closeBtnForm.addEventListener("click", closeModalForm);
 
+// javascript for form validation only
 
+const validatefirstNameInput = () => {
+    if(!firstName.value) {
+        errorMsg[0].classList.remove("display-none");
+        isFormValide = false;
+    } else {
+        errorMsg[0].classList.add("display-none");
+        isFormValide = true;
+    }
+}
 
+const validatelastNameInput = () => {
+    if(!lastName.value) {
+        errorMsg[1].classList.remove("display-none");
+        isFormValide = false;
+    } else {
+        errorMsg[1].classList.add("display-none");
+        isFormValide = true;
+    }
+}
 
+const validateemailInput = () => {
+    if(!email.value) {
+        errorMsg[2].classList.remove("display-none");
+        isFormValide = false;
+    } else {
+        errorMsg[2].classList.add("display-none");
+        isFormValide = true;
+    }
+}
+
+form.addEventListener('submit', (e) => {
+//    prevent deffaut behavior of the form by preventing it from reloding the page after submition
+    e.preventDefault();
+    validatefirstNameInput();
+    validatelastNameInput();
+    validateemailInput();
+    if (isFormValide) {
+        form.remove();
+        receptioMsg.classList.remove("display-none");
+    }
+});
+lastName.addEventListener("input", () => {
+    validatelastNameInput();
+});
+firstName.addEventListener("input", () => {
+    validatefirstNameInput();
+});
+email.addEventListener("input", () => {
+    validateemailInput();
+});
 
 
 

@@ -23,7 +23,7 @@
 
         <div class="header-content-sec-2">
             <div class="logo photographer-logo">
-                <a href="index.html"><img src="/Sample Photos/logo/logo.png" alt="logo of fisheye"></a>
+                <a href="index.html"><img src="Sample Photos/logo/logo.png" alt="logo of fisheye"></a>
             </div>
         </div>
       </section>
@@ -179,7 +179,7 @@
        <!----------- modal form -------------------------->
        <div class="modal-form display-none" id="modal-form" >
         
-        <form action="" method="get" class="form-example" id="form">
+        <form action="index.html" method="get" class="form-example" id="form" onsubmit="return validate();">
 
             <div class="head">
                 <p>Contact me <span>Mimi Keel</span></p>
@@ -188,15 +188,18 @@
 
             <div class="first-name single-input">
               <label for="first-name">first-name </label>
-              <input type="text" name="name" id="first-name" required>
+              <input type="text" name="name" id="first-name" >
+              <p class="error-msg display-none">First-Name cannot be empty</p>
             </div>
             <div class="last-name single-input">
               <label for="last-name">last-name </label>
-              <input type="text" name="name" id="last-name" required>
+              <input type="text" name="name" id="last-name" >
+              <p class="error-msg display-none">Last-Name cannot be empty</p>
             </div>
             <div class="email single-input">
               <label for="last-name single-input">Email</label>
-              <input type="email" name="email" id="email" required>
+              <input type="email" name="email" id="email" >
+              <p class="error-msg display-none">Email cannot be empty</p>
             </div>
             <div class="Your-message single-input">
               <label for="Your-message">Your message</label>
@@ -207,6 +210,9 @@
             </div>
 
           </form>
+          <div class="reception-msg display-none" id="reception-msg">
+            <h2> Thank you for contacting us</h2>
+          </div>
 
        </div>
        <!----------- end modal form -------------------------->
