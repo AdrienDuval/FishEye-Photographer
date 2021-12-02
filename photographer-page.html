@@ -70,80 +70,80 @@
             </select>
             </form>
        </div>
-       <div class="photographer-body__image">
+       <div class="photographer-body__image gallery">
            <div  class="single-image"  >
                <div class="image-container-hover image-container" id="image-container">
-               <img src="Sample Photos/Mimi/Animals_Rainbow.jpg" alt="Animals Rainbow.jpg" data-original="Sample Photos/Mimi/Animals_Rainbow.jpg">
+               <img class="image" src="Sample Photos/Mimi/Animals_Rainbow.jpg" alt="Animals Rainbow.jpg" data-original="Sample Photos/Mimi/Animals_Rainbow.jpg">
             </div>
                <div class="namerating">
                    <h3>Rainbow</h3>
                    <div class="rating">
-                       <p>12</p>
-                       <span><i class="fas fa-heart"></i></span>
-                   </div>
+                    <input type="text" id="like-count" value="25" class="like-count">
+                      <span id="like-btn" class="like-btn"><i class="fas fa-heart"></i></span>
+                  </div>
                </div>
            </div>
            <div  class="single-image second-image" >
                <div class="image-container-hover image-container" id="image-container">
-               <img src="Sample Photos/Mimi/Event_BenevidesWedding.jpg" alt="Event BenevidesWedding.jpg" data-original="Sample Photos/Mimi/Event_BenevidesWedding.jpg">
+               <img class="image" src="Sample Photos/Mimi/Event_BenevidesWedding.jpg" alt="Event BenevidesWedding.jpg" data-original="Sample Photos/Mimi/Event_BenevidesWedding.jpg">
                 </div>
                <div class="namerating">
                    <h3>BenevidesWedding</h3>
                    <div class="rating">
-                       <p>12</p>
-                       <span><i class="fas fa-heart"></i></span>
-                   </div>
+                    <input type="text" id="like-count" value="30" class="like-count">
+                      <span id="like-btn" class="like-btn"><i class="fas fa-heart"></i></span>
+                  </div>
                </div>
            </div>
            <div  class="single-image">
                <div class="image-container-hover image-container" id="image-container">
-               <img src="Sample Photos/Mimi/Event_PintoWedding.jpg" alt="Event PintoWedding.jpg" data-original="Sample Photos/Mimi/Event_PintoWedding.jpg">
+               <img class="image" src="Sample Photos/Mimi/Event_PintoWedding.jpg" alt="Event PintoWedding.jpg" data-original="Sample Photos/Mimi/Event_PintoWedding.jpg">
                 </div>
                <div class="namerating">
                    <h3>PintoWedding</h3>
                    <div class="rating">
-                       <p>12</p>
-                       <span><i class="fas fa-heart"></i></span>
-                   </div>
+                    <input type="text" id="like-count" value="215" class="like-count">
+                      <span id="like-btn" class="like-btn "><i class="fas fa-heart"></i></span>
+                  </div>
                </div>
            </div>
        </div>
        <div class="photographer-body__image">
            <div  class="single-image">
                <div class="image-container-hover image-container" id="image-container">
-               <img src="Sample Photos/Mimi/Event_SeasideWedding.jpg" alt="Event SeasideWedding.jpg" data-original="Sample Photos/Mimi/Event_SeasideWedding.jpg">
+               <img class="image" src="Sample Photos/Mimi/Event_SeasideWedding.jpg" alt="Event SeasideWedding.jpg" data-original="Sample Photos/Mimi/Event_SeasideWedding.jpg">
                 </div>
                <div class="namerating">
                    <h3>SeasideWedding</h3>
                    <div class="rating">
-                       <p>12</p>
-                       <span><i class="fas fa-heart"></i></span>
-                   </div>
+                    <input type="text" id="like-count" value="55" class="like-count">
+                      <span id="like-btn" class="like-btn"><i class="fas fa-heart"></i></span>
+                  </div>
                </div>
            </div>
            
            <div  class="single-image second-image ">
                <div class="image-container-hover image-container" id="image-container">
-               <img src="Sample Photos/Mimi/Travel_Lonesome.jpg" alt="Travel Lonesome.jpg" data-original="Sample Photos/Mimi/Travel_Lonesome.jpg" />
+               <img class="image" src="Sample Photos/Mimi/Travel_Lonesome.jpg" alt="Travel Lonesome.jpg" data-original="Sample Photos/Mimi/Travel_Lonesome.jpg" />
                 </div>
                <div class="namerating">
                    <h3>Lonesome</h3>
                    <div class="rating">
-                       <p>12</p>
-                       <span><i class="fas fa-heart"></i></span>
-                   </div>
+                    <input type="text" id="like-count" value="24" class="like-count">
+                      <span id="like-btn" class="like-btn"><i class="fas fa-heart"></i></span>
+                  </div>
                </div>
            </div>
            <div  class="single-image ">
                <div class="image-container-hover image-container" id="image-container">
-               <img src="Sample Photos/Mimi/Travel_HillsideColor.jpg" alt="Travel HillsideColor.jpg" data-original="Sample Photos/Mimi/Travel_HillsideColor.jpg">
+               <img class="image" src="Sample Photos/Mimi/Travel_HillsideColor.jpg" alt="Travel HillsideColor.jpg" data-original="Sample Photos/Mimi/Travel_HillsideColor.jpg">
                 </div>
                <div class="namerating">
                    <h3>Rainbow</h3>
                    <div class="rating">
-                       <p>12</p>
-                       <span><i class="fas fa-heart"></i></span>
-                   </div>
+                    <input type="text" id="like-count" value="65" class="like-count">
+                      <span id="like-btn" class="like-btn"><i class="fas fa-heart"></i></span>
+                  </div>
                </div>
            </div>
        </div>
@@ -179,7 +179,7 @@
        <!----------- modal form -------------------------->
        <div class="modal-form display-none" id="modal-form" >
         
-        <form action="index.html" method="get" class="form-example" id="form" onsubmit="return validate();">
+        <form action="index.html" method="get" class="form-example" id="form" >
 
             <div class="head">
                 <p>Contact me <span>Mimi Keel</span></p>
@@ -197,7 +197,7 @@
               <p class="error-msg display-none">Last-Name cannot be empty</p>
             </div>
             <div class="email single-input">
-              <label for="last-name single-input">Email</label>
+              <label for="last-name ">Email</label>
               <input type="email" name="email" id="email" >
               <p class="error-msg display-none">Email cannot be empty</p>
             </div>
@@ -211,7 +211,7 @@
 
           </form>
           <div class="reception-msg display-none" id="reception-msg">
-            <h2> Thank you for contacting us</h2>
+            <h2> Thank you for contacting us <br> <span>click any where to close form</span> </h2>
           </div>
 
        </div>

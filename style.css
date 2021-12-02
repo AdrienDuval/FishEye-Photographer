@@ -270,6 +270,8 @@ body.phographers .logo {
 
 .phographers .single-image {
   width: 27%;
+}
+.phographers .single-image h3{
   color:#901C1C;
 }
 .phographers .single-image img {
@@ -319,10 +321,15 @@ body.phographers .logo {
 }
 
 .phographers .rating span {
-  color: #901C1C;
+  color: rgb(125, 126, 128);
   border: none;
   font-size: 22px;
   width: 10%;
+}
+
+.like {
+  color: #901C1C !important;
+  transition: ease-in-out 0.2s;
 }
 
 .phographers .floating-cta {
@@ -524,6 +531,23 @@ div#reception-msg h2 {
   text-align: center;
   color: #DB8876;
   margin-top: 100px;
+}
+div#reception-msg span {
+  color: black;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
+input#like-count {
+  font-size: 20px;
+  border: none;
+  width: 54px;
+  font-weight: 500;
+  text-align: center;
+}
+.rating input:focus-visible {
+  outline: none;
+  cursor: context-menu;
 }
 .display-none {
   display: none;
