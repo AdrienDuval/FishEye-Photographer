@@ -1,0 +1,22 @@
+{
+  "name": "project-6-version-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdrienDuval/project-6-version-2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AdrienDuval/project-6-version-2/issues"
+  },
+  "homepage": "https://github.com/AdrienDuval/project-6-version-2#readme",
+  "devDependencies": {
+    "eslint": "^8.4.1"
+  }
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content=
+    "width=device-width, initial-scale=1.0">
+  
+    <title>JavaScript | fetch() Method</title>
+</head>
+  
+<body>
+    <script>
+  
+        // API for get requests
+        let fetchRes = fetch(
+"sample json file.json");
+  
+        // fetchRes is the promise to resolve
+        // it by using.then() method
+        fetchRes.then(response =>
+        response.json()).then(data => {
+                console.log(data.photographers[0])
+            })
+    </script>
+</body>
+  
+</html>

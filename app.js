@@ -233,84 +233,47 @@ likeBtn[5].addEventListener('click', () => {
         removelikecolor(5);
     };
 });
-likeBtn[6].addEventListener('click', () => {
-    
-    if (dislike) {
-        incrementLikes(6);
-        addlikecolor(6);
-    } else {
-        decrementLikes(6);
-        removelikecolor(6);
-    };
-});
 
-photographers = [
-    {
-      "name": "Mimi Keel",
-      "id": 243,
-      "city": "London",
-      "country": "UK",
-      "tags": ["portrait", "events", "travel", "animals"],
-      "tagline": "Voir le beau dans le quotidien",
-      "price": 400,
-      "portrait": "MimiKeel.jpg"
-    },
-    {
-      "name": "Ellie-Rose Wilkens",
-      "id": 930,
-      "city": "Paris",
-      "country": "France",
-      "tags": ["sports", "architecture"],
-      "tagline": "Capturer des compositions complexes",
-      "price": 250,
-      "portrait": "EllieRoseWilkens.jpg"
-    },
-    {
-      "name": "Tracy Galindo",
-      "id": 82,
-      "city": "Montreal",
-      "country": "Canada",
-      "tags": ["art", "fashion", "events"],
-      "tagline": "Photographe freelance",
-      "price": 500,
-      "portrait": "TracyGalindo.jpg"
-    },
-    {
-      "name": "Nabeel Bradford",
-      "id": 527,
-      "city": "Mexico City",
-      "country": "Mexico",
-      "tags": ["travel", "portrait"],
-      "tagline": "Toujours aller de l'avant",
-      "price": 350,
-      "portrait": "NabeelBradford.jpg"
-    },
-    {
-      "name": "Rhode Dubois",
-      "id": 925,
-      "city": "Barcelona",
-      "country": "Spain",
-      "tags": ["sport", "fashion", "events", "animals"],
-      "tagline": "Je crée des souvenirs",
-      "price": 275,
-      "portrait": "RhodeDubois.jpg"
-    },
-    {
-      "name": "Marcel Nikolic",
-      "id": 195,
-      "city": "Berlin",
-      "country": "Germany",
-      "tags": ["travel", "architecture"],
-      "tagline": "Toujours à la recherche de LA photo",
-      "price": 300,
-      "portrait": "MarcelNikolic.jpg"
+
+// fetch json data in fuvtion called fetchdata
+function fetchData() {
+   fetch("sample json file.json")
+   .then(response => response.json())
+   .then(data => {
+
+       // looping throw tags of a photographer
+
+        var output = "";
+        var name = "";
+
+        function mimiKeel(inx) {
+        for (var i = 0; i < data.photographers[inx].tags.length; i++) {
+
+                console.log(data.photographers[inx].tags[i])
+                name = data.photographers[inx].name;
+                output += '<li>' + 
+                    '<a href="' + data.photographers[inx].tags[i] + 
+                    '">'+"#" + data.photographers[inx].tags[i] + '</a>' + 
+                    '</li>';   
+                
+        }
     }
-  ]
+    mimiKeel(0);
 
 
+        var update = document.getElementById('tags');
+        var nameMimi = document.getElementById("name-1");
+
+       
+        update.innerHTML = output;
+        nameMimi.innerHTML = name;
+
+        })
+
+}
 
 
-
+fetchData();
 
 
 
