@@ -7,6 +7,7 @@ const errorMsg = document.querySelectorAll(".error-msg");
 const likeBtn = document.querySelectorAll(".like-btn");
 const likeCount = document.querySelectorAll(".like-count");
 
+
 let isFormValide =  false;
 let dislike = true;
 
@@ -25,7 +26,8 @@ let closeBtn = id("close-btn"),
      firstName = id("first-name"),
      lastName = id("last-name"),
      email = id("email"),
-     receptioMsg = id("reception-msg");
+     receptioMsg = id("reception-msg"),
+     pageIdMimi = id("243");
 
    
 // looping throw the images to get all the images together and add click event listener
@@ -245,28 +247,57 @@ function fetchData() {
 
         var output = "";
         var name = "";
+        var cityCountry = "";
+        var tagLine = ""; 
+        var price = "";
 
+        //creating a funtion with parameter to display dynamically json data on the page
         function mimiKeel(inx) {
+
+        // craeting for loop to pass throw all the photographers dynamically
         for (var i = 0; i < data.photographers[inx].tags.length; i++) {
 
-                console.log(data.photographers[inx].tags[i])
+                // daisplayin the name from the json data
                 name = data.photographers[inx].name;
+            
+                // displaying the city and country from the json data
+                cityCountry = data.photographers[inx].city  + "," + " " + data.photographers[inx].country;
+                
+                // dispalying the tag line of the fromthe json data
+                tagLine = data.photographers[inx].tagline;
+
+                //displaying the price dynamically from the json data
+                price = data.photographers[inx].price + '$/Day' ;
+
+                // putting the tags from the json data to the links tags in the DOM
                 output += '<li>' + 
                     '<a href="' + data.photographers[inx].tags[i] + 
                     '">'+"#" + data.photographers[inx].tags[i] + '</a>' + 
                     '</li>';   
                 
         }
+        
     }
-    mimiKeel(0);
+    
+ // condition to display page data from json files  
+ // i sue .id to display the exact value of the id so that i can test it with id of the photographer in the json data
+if ( pageIdMimi.id == data.photographers[0].id) {
+    mimiKeel(0); 
+}
 
-
+// local variables for displaying element in the dom from the json dat
         var update = document.getElementById('tags');
         var nameMimi = document.getElementById("name-1");
+        var cityAndCountry = document.getElementById("countrycity");
+        var description  = document.getElementById("descriptions");
+        var prices = document.getElementById("prices");
 
-       
+// updating the iner htmlof all DOM with element from the json data
         update.innerHTML = output;
         nameMimi.innerHTML = name;
+        cityAndCountry.innerHTML = cityCountry;
+        description.innerHTML = tagLine;
+        prices.innerHTML = price;
 
         })
 

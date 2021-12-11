@@ -11,17 +11,63 @@
   
 <body>
     <script>
-  
-        // API for get requests
-        let fetchRes = fetch(
-"sample json file.json");
-  
-        // fetchRes is the promise to resolve
-        // it by using.then() method
-        fetchRes.then(response =>
-        response.json()).then(data => {
-                console.log(data.photographers[0])
-            })
+       var data = {
+  "photographers": [{
+      "name": "Mimi Keel",
+      "id": 243,
+      "city": "London",
+      "country": "UK",
+      "tags": ["portrait", "events", "travel", "animals"],
+      "tagline": "Voir le beau dans le quotidien",
+      "price": 400,
+      "portrait": "MimiKeel.jpg"
+    },
+    {
+      "name": "Ellie-Rose Wilkens",
+      "id": 930,
+      "city": "Paris",
+      "country": "France",
+      "tags": ["sports", "architecture"],
+      "tagline": "Capturer des compositions complexes",
+      "price": 250,
+      "portrait": "EllieRoseWilkens.jpg"
+    }
+  ]
+};
+
+// All photographers
+for (let photographer of data.photographers) {
+  for (let tag of photographer.tags) {
+    console.log(tag);
+    // Here you get individual tag. Use it in your code like generating output.
+  }
+}
+
+// Just the first photographer
+for (let tag of data.photographers[0].tags) {
+  console.log(tag);
+  // Here you get individual tag. Use it in your code like generating output.
+}
+
+
+
+
+
+
+
+
+for (var i = 0; i <= data.photographers[0].tags.length; i++) {
+            for(keys in data.photographers[0].tags[i]) {
+                console.log(data.photographers[0].tags[i])
+                if(data.photographers[0].tags[i].hasOwnProperty(keys))
+                 {
+                output += '<li>' + 
+                    '<a href="' + data.photographers[0].tags[i] + 
+                    '">' + data.photographers[0].tags[i] + '</a>' + 
+                    '</li>';   
+                }
+            }
+        }
     </script>
 </body>
   
