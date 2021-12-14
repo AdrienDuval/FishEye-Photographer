@@ -249,7 +249,7 @@ body.phographers .logo {
 
 .phographers .contactme-div button a {
   font-size: 20px;
-  padding: 23px;
+  padding: 8px;
   color: white;
 }
 .phographers select {
@@ -286,7 +286,7 @@ body.phographers .logo {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  margin-bottom: 30px;
 }
 .phographers .single-image.second-image {
   margin: 0 100px;
@@ -577,6 +577,12 @@ input#like-count {
   .our-phographer {
     width: 50%;
 }
+.phographers .single-image.second-image {
+  margin: 0px 30px !important;
+}
+.phographers .photographer-body__image {
+  flex-wrap: nowrap !important; 
+}
 .logo {
   width: 45%;
   margin-left: 0px;
@@ -704,7 +710,7 @@ nav li a {
   width: 30%;
 }
 .phographers .photgrapher-image img {
-  height: 120px;
+  height: 200px;
 }
 .photographer-body__content.options {
   display: flex;
@@ -736,9 +742,11 @@ form.form-example {
   font-size: 30px;
 }
 }
-@media only screen and (max-width: 4000px) {
+@media only screen and (max-width: 700px) {
 
-
+  .phographers .photgrapher-image img {
+    height: 150px;
+  }
 }
 @keyframes modalopen {
   from {
